@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "main.c"
+#include "list.h"
 
 /**
  * main - check the code

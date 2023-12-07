@@ -1,4 +1,4 @@
-#include "main.c"
+#include "list.h"
 
 /**
  * print_dlistint - Prints all dlistint_t list elements with Structures

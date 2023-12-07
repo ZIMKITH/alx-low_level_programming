@@ -1,5 +1,5 @@
-#ifndef _MAIN_C_
-#define _MAIN_C_
+#ifndef _LIST_H_
+#define _LIST_H_
 
 /* Libraries */
 #include <stdlib.h>
