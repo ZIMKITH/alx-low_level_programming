@@ -1,11 +1,12 @@
 #include "lists.h"
 
 /**
- * print_dlistint - Prints all dlistint_t list elements with Structures
+ * dlistint_len - Double linked list number returned in structures
+ * of node
  * @h: head pointers
- * Return: The nodes
+ * Return: The number of nodes
  */
-size_t print_dlistint(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 	int num_nodes;
 
@@ -23,7 +24,6 @@ size_t print_dlistint(const dlistint_t *h)
 
 	while (h != NULL)
 	{
-		printf("%d\n", h->n);
 		num_nodes++;
 		h = h->next;
 	}
