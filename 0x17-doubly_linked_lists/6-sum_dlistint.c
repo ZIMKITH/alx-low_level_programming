@@ -1,53 +1,30 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - Inserts new node in Functions
- * specific position
- * @h: Head pointer
- * @idx: Index node
- * @n: Node value Elemengt
- * Return: New node address.
+ * sum_dlistint - Return sum of all doubly linked to the function
+ * list data (n)
+ * @head: Head pointer
+ * Return: Data sum (Success) or if empty NULL
  */
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+int sum_dlistint(dlistint_t *head)
 {
-	dlistint_t *new_elem;
-	dlistint_t *head;
-	unsigned int a;
+	int data_sum;
 
-	new_elem = NULL;
-	if (idx == 0)
-		new_elem = add_dnodeint(h, n);
-	else
+	data_sum = 0;
+
+	if (head != NULL)
 	{
-		head = *h;
-		a = 1;
-		if (head != NULL)
-			while (head->prev != NULL)
-				head = head->prev;
+		while (head->prev != NULL)
+		{
+			head = head->prev;
+		}
+
 		while (head != NULL)
 		{
-			if (a == idx)
-			{
-				if (head->next == NULL)
-					new_elem = add_dnodeint_end(h, n);
-				else
-				{
-					new_elem = malloc(sizeof(dlistint_t));
-					if (new_elem != NULL)
-					{
-						new_elem->n = n;
-						new_elem->next = head->next;
-						new_elem->prev = head;
-						head->next->prev = new_elem;
-						head->next = new_elem;
-					}
-				}
-				break;
-			}
+			data_sum += head->n;
 			head = head->next;
-			a++;
 		}
 	}
 
-	return (new_elem);
+	return (data_sum);
 }
